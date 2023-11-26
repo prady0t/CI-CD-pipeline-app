@@ -15,7 +15,7 @@ type Person struct {
 func root(w http.ResponseWriter, e *http.Request){
 
 	person := Person{
-		Name:  "Prady0t",
+		Name:  "Prakhar",
 		Age:   22,
 		Email: "prady0t@example.com",
 	}
