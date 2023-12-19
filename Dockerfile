@@ -9,7 +9,8 @@ FROM golang:1.17
 WORKDIR /app
 
 # Copy your application files into the container
-COPY . /app
+COPY login /app
+
 
 RUN go build -o app
 # Expose any necessary ports
