@@ -30,9 +30,11 @@ pipeline {
                     dockerImage = docker.build env.DOCKER_IMAGE_NAME
 
                     // Authenticate with Docker Hub
-                    docker.withRegistry('', env.DOCKERHUB_CREDENTIALS) {
+                    withCredentials(DOCKERHUB_CREDENTIALS) {
                         // Push the Docker image to Docker Hub
-                        dockerImage.push()
+                        docker.withRegistry('', "prady0t/pipeline") {
+                            dockerImage.push()
+                        }
                     }
                 }
             }
