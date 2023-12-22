@@ -30,7 +30,7 @@ pipeline {
                     dockerImage = docker.build env.DOCKER_IMAGE_NAME
 
                     // Authenticate with Docker Hub
-                    docker.withRegistry('https://registry.hub.docker.com', env.DOCKERHUB_CREDENTIALS) {
+                    docker.withRegistry('', env.DOCKERHUB_CREDENTIALS) {
                         // Push the Docker image to Docker Hub
                         dockerImage.push()
                     }
