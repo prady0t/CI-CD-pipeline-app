@@ -1,18 +1,40 @@
 pipeline {
     agent any
+    
+    environment {
+        // Define environment variables for Docker Hub credentials
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub_cred')
+        DOCKER_IMAGE_NAME = 'prady0t/pipeline'
+    }
 
     stages {
         stage('Checkout') {
             steps {
                 // Checkout code from a version control system (e.g., Git)
                 echo 'Checkout'
+                script {
+                    git branch: 'main',
+                        credentialsId: 'Github',
+                        url: 'https://github.com/prady0t/CI-CD-pipeline-app'
+                }
             }
         }
 
-        stage('Build') {
+        stage('Build and push Docker Image') {
             steps {
-                // Build your project (e.g., using Maven, Gradle, etc.)
+
                 echo 'Build'
+
+                script {
+                    // Build the Docker image using the Dockerfile in the repository
+                    dockerImage = docker.build env.DOCKER_IMAGE_NAME
+
+                    // Authenticate with Docker Hub
+                    docker.withRegistry('https://registry.hub.docker.com', env.DOCKERHUB_CREDENTIALS) {
+                        // Push the Docker image to Docker Hub
+                        dockerImage.push()
+                    }
+                }
             }
         }
 
