@@ -27,7 +27,7 @@ pipeline {
 
                 script {
                     // Build the Docker image using the Dockerfile in the repository
-                    dockerImage = docker.build env.DOCKER_IMAGE_NAME
+                    dockerImage = docker.build("--build-arg BUILD_TAG=${BUILD_TAG}",env.DOCKER_IMAGE_NAME)
 
                     // Authenticate with Docker Hub
                     docker.withRegistry('', env.DOCKERHUB_CREDENTIALS) {
