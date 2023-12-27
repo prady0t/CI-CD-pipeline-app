@@ -43,14 +43,13 @@ pipeline {
         stage('Build and Push Docker Image') {
       environment {
         DOCKER_IMAGE = "prady0t/pipeline"
-        // DOCKERFILE_LOCATION = "java-maven-sonar-argocd-helm-k8s/spring-boot-app/Dockerfile"
-        REGISTRY_CREDENTIALS = credentials('docker-cred')
+        REGISTRY_CREDENTIALS = credentials('dockerhub-cred')
       }
       steps {
         script {
   
             def dockerImage = docker.image("${DOCKER_IMAGE}")
-            docker.withRegistry('https://index.docker.io/v1/', "docker-cred") {
+            docker.withRegistry('https://index.docker.io/v1/', "dockerhub-cred") {
                 dockerImage.push()
             }
         }
