@@ -54,7 +54,8 @@ pipeline {
                 dockerImage.push()
             }
         }
-      }
+      }    
+    }
 
         // stage('Test') {
         //     steps {
