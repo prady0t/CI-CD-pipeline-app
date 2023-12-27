@@ -90,7 +90,7 @@ pipeline {
     
     environment {
         DOCKER_IMAGE_NAME = 'prady0t/pipeline'
-        DOCKERFILE_LOCATION = 'Dockerfile'
+        DOCKERFILE_LOCATION = ''
         GITHUB_REPO_URL = 'https://github.com/prady0t/CI-CD-pipeline-app'
     }
 
