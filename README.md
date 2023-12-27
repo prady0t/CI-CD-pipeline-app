@@ -98,4 +98,31 @@ With this we are done with our CI part.
 
 ## Step 6
 
-Setup ArgoCD cluster on minikube.
+Setup ArgoCD cluster on minikube. Just follow all the steps from the docs -> https://argo-cd.readthedocs.io/en/stable/getting_started/
+Go to `localhost:8080`
+
+<img width="1380" alt="image" src="https://github.com/prady0t/CI-CD-pipeline-app/assets/99216956/dfad6712-770c-4a3e-bed1-9622a072e0be">
+
+Again for initial login, follow the docs.
+
+## Step 7
+
+Create a new app with these settings:
+
+<img width="1057" alt="image" src="https://github.com/prady0t/CI-CD-pipeline-app/assets/99216956/9800692d-926d-4aec-ba99-fe9236b2b15b">
+
+<img width="1057" alt="Screenshot 2023-12-28 at 2 11 02 AM" src="https://github.com/prady0t/CI-CD-pipeline-app/assets/99216956/d1c21a6f-39b2-4c8b-935b-ade6d271c56f">
+
+Click `Create`
+
+<img width="1323" alt="image" src="https://github.com/prady0t/CI-CD-pipeline-app/assets/99216956/68b0efef-b293-49ca-a2b7-5f87c4b03402">
+
+Go to the terminal and enter:
+```
+kubectl get pods
+```
+You will see it automatically created pods which were mentioned in the manifest files!
+
+<img width="1017" alt="image" src="https://github.com/prady0t/CI-CD-pipeline-app/assets/99216956/608d7e1f-e5c6-4653-bf3f-0ca6fbdf761c">
+
+With this we are also done with our CD part.
