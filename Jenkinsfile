@@ -56,12 +56,12 @@ pipeline {
         }
       }
 
-        stage('Test') {
-            steps {
-                // Run tests (adjust as needed based on your testing framework)
-                echo 'Test'
-            }
-        }
+        // stage('Test') {
+        //     steps {
+        //         // Run tests (adjust as needed based on your testing framework)
+        //         echo 'Test'
+        //     }
+        // }
 
         stage('Deploy') {
             steps {
