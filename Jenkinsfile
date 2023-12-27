@@ -39,7 +39,7 @@ pipeline {
         //         }
         //     }
         // }
-
+//test
         stage('Build and Push Docker Image') {
       environment {
         DOCKER_IMAGE = "prady0t/pipeline"
