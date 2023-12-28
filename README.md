@@ -6,6 +6,11 @@ Here'a a list of tools which I used:
 - AWS EC2: For setting up a Jenkins server.
 - Jenkins: For setting up CI part.
 - ArgoCD: For the CD part following GitOps principles.
+  
+This is how the workflow looks like:
+
+![image (5)](https://github.com/prady0t/CI-CD-pipeline-app/assets/99216956/f77ce19f-7030-49e5-9402-5921493d478b)
+
 
 ## Step 1
 Containerize the app using Dockerfile given in the project repo.
