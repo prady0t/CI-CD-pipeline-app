@@ -86,6 +86,10 @@ usermod -aG docker jenkins
 usermod -aG docker ubuntu
 systemctl restart docker
 ```
+Recent debuging, also add : 
+```
+sudo chmod 777 /var/run/docker.sock
+```
 Also restart jenkins.
 
 Now add webhook to github repo. A webhook is basically Jenkins server url followed by `//github-webhook/`:
